@@ -52,7 +52,8 @@ const [landingPageData, setLandingPageData] = useState({})
      <Header data={landingPageData.Header} />
       <div id='join'>
         <div className='container'>
-          <div className='col-md-12'>
+          <div className='row'>
+            <div className='col-md-9'>
             <div className='row'>
               <div className='section-title'>
                 <h2>Inscreva-se</h2>
@@ -157,6 +158,10 @@ const [landingPageData, setLandingPageData] = useState({})
                 </button>
               </form>
             </div>
+          </div>
+            <div className='col-md-3 join-photo'>
+              
+              </div>
           </div>
         </div>
       </div>

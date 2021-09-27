@@ -635,3 +635,13 @@ div.loader {
 .loader-text p {
   font-size: 32px;
 }
+.join-photo {
+  margin-top: 1.5em;
+  margin-left: 1em;
+  margin-right: -1em;
+  height: 25em;
+  background-position: 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/img/trans.jpg");
+}
