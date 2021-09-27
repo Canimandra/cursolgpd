@@ -1,5 +1,5 @@
 import ParticlesBg from "particles-bg";
-
+import { HashLink as Link } from 'react-router-hash-link';
 export const Header = (props) => {
   return (
     <header id='header'>
@@ -19,12 +19,9 @@ export const Header = (props) => {
                   <span></span>
                 </h2>
                 <p>{props.data ? props.data.paragraph : 'Loading'}</p>
-                <a
-                  href='#join'
-                  className='btn btn-custom btn-lg page-scroll'
-                >
+                <Link className='btn btn-custom btn-lg page-scroll' to='#join'>
                   Inscreva-se
-                </a>{' '}
+                </Link>{' '}
               </div>
             </div>
           </div>

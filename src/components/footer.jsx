@@ -1,3 +1,4 @@
+import { HashLink as Link } from 'react-router-hash-link';
 export const Footer = (props) => {
   
   return (
@@ -12,9 +13,8 @@ export const Footer = (props) => {
          
           <br/>
            
-            <a href='/privacy'>
-              Política de Privacidade
-            </a>
+            <Link to="/privacy">Política de Privacidade</Link>
+              
           </p>
         </div>
       </div>

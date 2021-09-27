@@ -33,7 +33,7 @@ const [landingPageData, setLandingPageData] = useState({})
         (result) => {
           console.log(result.text)
           clearState()
-          window.open("/confirm");
+          window.open("/#/confirm");
         },
         (error) => {
           console.log(error.text)

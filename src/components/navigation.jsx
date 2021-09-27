@@ -1,3 +1,4 @@
+import { HashLink as Link } from 'react-router-hash-link';
 export const Navigation = (props) => {
   return (
     <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
@@ -15,9 +16,10 @@ export const Navigation = (props) => {
             <span className='icon-bar'></span>{' '}
             <span className='icon-bar'></span>{' '}
           </button>
-          <a className='navbar-brand page-scroll' href='/#page-top'>
+          <Link className='navbar-brand page-scroll' to='/#page-top'>
+          
             Treinamento em LGPD
-          </a>{' '}
+          </Link>{' '}
         </div>
 
         <div
@@ -27,9 +29,10 @@ export const Navigation = (props) => {
           <ul className='nav navbar-nav navbar-right'>
   
             <li>
-              <a href='/#join' className='page-scroll'>
+              <Link className='page-scroll' to='/#join'>
+
                 Inscreva-se
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
