@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import emailjs from 'emailjs-com'
 import { Header } from './header'
 import JsonData from '../data/data.json'
-
+//import { Redirect } from 'react-router-dom';
+import mainContext from './mainContext'
 
 const initialState = {
   name: '',
@@ -10,7 +11,9 @@ const initialState = {
   message: '',
 }
 export const Join = (props) => {
-  const [{ name, email, message }, setState] = useState(initialState)
+// eslint-disable-next-line no-unused-vars
+const { loadingState, setLoadingState } = useContext(mainContext)
+const [{ name, email, message }, setState] = useState(initialState)
 const [landingPageData, setLandingPageData] = useState({})
   useEffect(() => {
     setLandingPageData(JsonData)
@@ -24,6 +27,7 @@ const [landingPageData, setLandingPageData] = useState({})
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setLoadingState(true);
     console.log(name, email, message)
     emailjs
       .sendForm(
@@ -31,19 +35,21 @@ const [landingPageData, setLandingPageData] = useState({})
       )
       .then(
         (result) => {
-          console.log(result.text)
+          console.log(result.text)          
           clearState()
-          window.open("/#/confirm");
+          setLoadingState(false) 
+          window.open('/#/confirm')
         },
         (error) => {
           console.log(error.text)
+
           alert('Ocorreu um erro. Tente novamente mais tarde')
         }
       )
   }
   return (
     <div>
-              <Header data={landingPageData.Header} />
+     <Header data={landingPageData.Header} />
       <div id='join'>
         <div className='container'>
           <div className='col-md-12'>

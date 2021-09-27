@@ -16,7 +16,7 @@ export const Navigation = (props) => {
             <span className='icon-bar'></span>{' '}
             <span className='icon-bar'></span>{' '}
           </button>
-          <Link className='navbar-brand page-scroll' to='/#page-top'>
+          <Link smooth className='navbar-brand page-scroll' to='/#page-top'>
           
             Treinamento em LGPD
           </Link>{' '}
@@ -29,7 +29,7 @@ export const Navigation = (props) => {
           <ul className='nav navbar-nav navbar-right'>
   
             <li>
-              <Link className='page-scroll' to='/#join'>
+              <Link smooth className='page-scroll' to='/#join'>
 
                 Inscreva-se
               </Link>

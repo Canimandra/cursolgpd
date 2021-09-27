@@ -13,6 +13,8 @@ import SmoothScroll from 'smooth-scroll'
 import { Switch, Route } from 'react-router-dom'
 import Confirm from './Confim'
 import Privacy from './Privacy'
+import Loader from "./components/loader";
+import mainContext from './components/mainContext'
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -20,13 +22,18 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 })
 
 const App = () => {
+  const  [loadingState, setLoadingState] = useState(false)
+  //setLoadingState(false);
   const [landingPageData, setLandingPageData] = useState({})
   useEffect(() => {
     setLandingPageData(JsonData)
   }, [])
+  if (loadingState) { return (<Loader />)}
 
   return (
+    <mainContext.Provider value={{loadingState, setLoadingState}}>
     <div>
+      
       <Navigation />
 
       <Switch>
@@ -35,7 +42,9 @@ const App = () => {
         <Route exact path='/privacy' component={Privacy}/>
       </Switch>
       <Footer />
+      
     </div>
+    </mainContext.Provider>
   )
 }
 
