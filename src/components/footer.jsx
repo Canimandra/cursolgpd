@@ -9,6 +9,12 @@ export const Footer = (props) => {
             <a href='http://www.templatewire.com' rel='nofollow'>
               TemplateWire
             </a>
+         
+          <br/>
+           
+            <a href='/privacy'>
+              Política de Privacidade
+            </a>
           </p>
         </div>
       </div>
