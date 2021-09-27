@@ -645,3 +645,14 @@ div.loader {
   background-size: cover;
   background-image: url("/img/trans.jpg");
 }
+.privacy,
+.privacy p {
+  font-size: 18px;
+}
+.privacy ol {
+  padding-top: 2em;
+}
+div.privacy ul,
+div.privacy p strong {
+  margin-left: 2em;
+}
